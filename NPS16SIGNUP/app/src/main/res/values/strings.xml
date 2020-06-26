@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NEWS PAPER</string>
+    <string name="home_activity">home</string>
+    <string name="final_activity">final</string>
+</resources>
