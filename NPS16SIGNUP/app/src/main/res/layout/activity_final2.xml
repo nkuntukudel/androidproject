@@ -35,6 +35,7 @@
             </TextView>
 
             <TextView
+                android:id="@+id/username"
                 android:layout_width="66dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

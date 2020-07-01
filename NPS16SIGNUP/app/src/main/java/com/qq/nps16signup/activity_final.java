@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 public class activity_final extends AppCompatActivity {
 
@@ -13,11 +14,12 @@ public class activity_final extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final2);
         if (getIntent().getExtras() != null) {
-            Bundle bundle = intent.getExtras();
-            bundle.getExtra("user");
-            User user = (User) getIntent().getParcelableExtra("user");
-            Log.i("activity_final", user.getmEmail());
+            User user = (User) getIntent().getParcelableExtra("User");
+            if (user != null) {
+                TextView tv = findViewById(R.id.username);
 
+                tv.setText(user.getmUsername());
+            }
         }
     }
 }
