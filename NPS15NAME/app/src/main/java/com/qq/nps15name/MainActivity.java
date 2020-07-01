@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         OnclickButtonListener();
     }
+
     public void OnclickButtonListener(){
         sendmessage = (EditText)findViewById(R.id.editText);
         button_sbm = (Button)findViewById(R.id.button);
