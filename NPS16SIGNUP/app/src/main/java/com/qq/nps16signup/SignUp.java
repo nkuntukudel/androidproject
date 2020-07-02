@@ -1,6 +1,7 @@
 package com.qq.nps16signup;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +34,9 @@ public class SignUp extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         user = new User(Email.getText().toString(),Username.getText().toString(),Password.getText().toString());
+                        SharedPreferences sharedPreferences = getSharedPreferences("SIGNUP", MODE_PRIVATE);
+                        sharedPreferences.edit().putString("email", user.getmEmail()).commit();
+
                         Intent intent = new Intent(SignUp.this, activity_final.class);
                         intent.putExtra("User" , user);
                         startActivity(intent);
