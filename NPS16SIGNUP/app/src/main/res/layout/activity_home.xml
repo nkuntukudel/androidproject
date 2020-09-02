@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_home"
+    android:background="@color/colorAccent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="30dp"
+        app:cardCornerRadius="10dp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="NEWS HOME"
+                android:textSize="20sp"
+                android:textStyle="bold">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:text="Are you already a member?"
+                android:textSize="15sp"
+                android:textStyle="normal">
+            </TextView>
+            <Button
+                android:background="@drawable/buttonstyle"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="SIGN IN"
+                android:textSize="20sp"
+                android:textStyle="bold">
+            </Button>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:text="Are you a new user?"
+                android:textSize="15sp"
+                android:textStyle="normal">
+            </TextView>
+
+            <Button
+                android:id="@+id/signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/buttonstyle"
+                android:text="SIGN UP"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"></Button>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
