@@ -2,4 +2,18 @@
     <string name="app_name">NEWS PAPER</string>
     <string name="home_activity">home</string>
     <string name="final_activity">final</string>
+    <string name="forgotpwlabel"><u>Forgot your password?</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="resend">Password will be sent to your email.</string>
+    <string name="reset">Please set a new password.</string>
+    <string-array name="newscategory">
+        <item>Political</item>
+        <item>Sports</item>
+        <item>Tech</item>
+    </string-array>
+    <string-array name="geocategory">
+        <item>International</item>
+        <item>National</item>
+        <item>Regional</item>
+    </string-array>
 </resources>
