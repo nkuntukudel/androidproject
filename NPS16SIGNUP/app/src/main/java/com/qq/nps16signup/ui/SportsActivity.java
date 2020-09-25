@@ -1,6 +1,7 @@
 package com.qq.nps16signup.ui;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SportsActivity extends AppCompatActivity {
+public class SportsActivity extends AppCompatActivity implements SportsAdapter.OnItemClickListner {
     ArrayList<String> username = new ArrayList<>();
     ArrayList<String> emailid = new ArrayList<>();
     ArrayList<String> password = new ArrayList<>();
@@ -32,9 +33,9 @@ public class SportsActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        RecyclerView lv = findViewById(R.id.rc_sports);
+        RecyclerView rv = findViewById(R.id.rc_sports);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-        lv.setLayoutManager(linearLayoutManager);
+        rv.setLayoutManager(linearLayoutManager);
         List<User> newscategory = new ArrayList<User>();
         //Create a dummy data set
         String userString = Utility.getJsonFromAssets(SportsActivity.this, "news.json");
@@ -46,6 +47,12 @@ public class SportsActivity extends AppCompatActivity {
             //newscategory.add(user);
         //}
         SportsAdapter adapter = new SportsAdapter(this,users.getUser());
-        lv.setAdapter(adapter);
+        rv.setAdapter(adapter);
+        adapter.setOnItemClickListner(this);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Toast.makeText(this,"News ",Toast.LENGTH_SHORT).show();
     }
 }

@@ -22,6 +22,15 @@ public class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder
     private final String TAG = SportsAdapter.class.getSimpleName();
     List<User> users = null;
     private final Context mContext;
+    private OnItemClickListner mClickListner;
+
+    public interface OnItemClickListner{
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListner (OnItemClickListner listner){
+        mClickListner = listner;
+    }
 
     public SportsAdapter(Context sports, List<User> newscategory) {
         users = newscategory;
@@ -61,6 +70,18 @@ public class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder
             tv1 = itemView.findViewById(R.id.country_name);
             tv2 = itemView.findViewById(R.id.country_abbrev);
             tv3 = itemView.findViewById(R.id.country_icon);
+            tv3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mClickListner != null){
+                        int position=getAdapterPosition();
+                        if (position!= RecyclerView.NO_POSITION){
+                            mClickListner.onItemClick(position);
+                        }
+                    }
+
+                }
+            });
         }
 
         public void setData(User user) {
@@ -69,7 +90,5 @@ public class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder
             Glide.with(tv3.getContext()).load(user.getmImageurl()).into(tv3);
         }
     }
-    public interface ItemClickListner{
-        void onItemClick(Users users);
-    }
+
 }
