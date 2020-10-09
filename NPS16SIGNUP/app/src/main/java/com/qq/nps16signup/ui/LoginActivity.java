@@ -14,10 +14,14 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.qq.nps16signup.R;
+import com.qq.nps16signup.data.Userss;
 import com.qq.nps16signup.utils.Utility;
 import com.qq.nps16signup.data.User;
 
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     private static Button button_sbm,button_sbmit;
@@ -46,8 +50,10 @@ public class LoginActivity extends AppCompatActivity {
                         //String name = sharedPreferences.getString("username", "no name set");
                         //String pass = sharedPreferences.getString("passkey", "no name set");
                      //   String userString=sharedPreferences.getString("ustring","no name set");
+                        List<User> newscategory = new ArrayList<User>();
                         String userString = Utility.getJsonFromAssets(LoginActivity.this, "user.json");
                         Gson gson=new Gson();
+
                         User user=gson.fromJson(userString,User.class);
 
 

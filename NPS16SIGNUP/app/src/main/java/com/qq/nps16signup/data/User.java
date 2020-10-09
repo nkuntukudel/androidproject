@@ -1,8 +1,8 @@
 package com.qq.nps16signup.data;
 
+import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.ImageView;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -66,8 +66,8 @@ public class User implements Parcelable{
         this.mPassword = mPassword;
     }
 
-    public String getmImageurl() {
-        return mImageurl;
+    public Uri getmImageurl() {
+        return Uri.parse(mImageurl);
     }
 
     @Override

@@ -21,9 +21,9 @@ import java.util.List;
 
 
 public class SportsActivity extends AppCompatActivity implements SportsAdapter.OnItemClickListner {
-    ArrayList<String> username = new ArrayList<>();
-    ArrayList<String> emailid = new ArrayList<>();
-    ArrayList<String> password = new ArrayList<>();
+    //ArrayList<String> username = new ArrayList<>();
+    //ArrayList<String> emailid = new ArrayList<>();
+    //ArrayList<String> password = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +33,11 @@ public class SportsActivity extends AppCompatActivity implements SportsAdapter.O
     }
 
     private void initViews() {
+
         RecyclerView rv = findViewById(R.id.rc_sports);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         rv.setLayoutManager(linearLayoutManager);
-        List<User> newscategory = new ArrayList<User>();
+        //List<User> newscategory = new ArrayList<User>();
         //Create a dummy data set
         String userString = Utility.getJsonFromAssets(SportsActivity.this, "news.json");
         Gson gson=new Gson();
@@ -53,6 +54,6 @@ public class SportsActivity extends AppCompatActivity implements SportsAdapter.O
 
     @Override
     public void onItemClick(int position) {
-        Toast.makeText(this,"News ",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"News " ,Toast.LENGTH_SHORT).show();
     }
 }
