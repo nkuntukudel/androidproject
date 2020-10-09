@@ -10,6 +10,8 @@
         <item>Political</item>
         <item>Sports</item>
         <item>Tech</item>
+        <item>Coming soon!!</item>
+        <item>Local NEWS</item>
     </string-array>
     <string-array name="geocategory">
         <item>International</item>

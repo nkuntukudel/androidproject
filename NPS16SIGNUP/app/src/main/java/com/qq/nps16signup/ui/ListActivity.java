@@ -48,7 +48,20 @@ public class ListActivity extends AppCompatActivity {
                         Intent tech=new Intent(ListActivity.this, TechActivity.class);
                         startActivity(tech);
                 }
+                switch(position){
+                    case 3:
+                        openDialog();
+                }
+                switch(position){
+                    case 4:
+                        Intent localnews=new Intent(ListActivity.this, LocalnewsActivity.class);
+                        startActivity(localnews);
+                }
             }
         });
+    }
+    public void openDialog(){
+        DialogFragment dialogFragment=new DialogFragment();
+        dialogFragment.show(getSupportFragmentManager(),"dialogfragment");
     }
 }
